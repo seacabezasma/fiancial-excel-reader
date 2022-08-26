@@ -1,9 +1,9 @@
-import controller.ExcelReadController;
+import controller.ExcelController;
 
 public class Main {
     public static void main ( String[] args ){
-        ExcelReadController readController = new ExcelReadController();
+        ExcelController readController = new ExcelController();
 
-        readController.readSourceExcelFile();
+        readController.manageData();
     }
 }
