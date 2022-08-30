@@ -3,6 +3,8 @@ package impl.bbva;
 import model.AbstractRowModel;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BbvaRowModel extends AbstractRowModel {
@@ -51,5 +53,13 @@ public class BbvaRowModel extends AbstractRowModel {
 
     public void setValor( BigDecimal valor ) {
         this.valor = valor;
+    }
+
+    @Override
+    public String toString(){
+        DateFormat formatter = new SimpleDateFormat( "dd/MM/yyyy" );
+
+        return String.format( "Fecha: %s, Comprobante: %s, Descripcion: %s, Valor: %s",
+                formatter.format( fecha ), comprobante, descripcion, valor );
     }
 }
